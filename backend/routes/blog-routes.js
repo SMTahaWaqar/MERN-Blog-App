@@ -1,5 +1,5 @@
 import express from "express";
-import { createBlog, getAllBlogs, getById, updateBlog } from "../controllers/blog-controller";
+import { createBlog, deletePost, getAllBlogs, getById, getByUserId, updateBlog } from "../controllers/blog-controller";
 
 const blogRouter = express.Router()
 
@@ -11,6 +11,8 @@ blogRouter.put("/update/:id", updateBlog)
 
 blogRouter.get("/:id", getById)
 
-blogRouter.delete("/:id", getById)
+blogRouter.delete("/delete/:id", deletePost)
+
+blogRouter.get("/user/:id", getByUserId)
 
 export default blogRouter;
