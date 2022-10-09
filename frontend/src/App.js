@@ -24,7 +24,7 @@ function App() {
           <Route path="/blogs" element={<Blogs />}/>
           <Route path="/myBlogs" element={<UserBlogs />}/>
           <Route path="/myBlogs/:id" element={<BlogDetails />}/>
-          <Route path="/blogs/add" element={<AddBlog />}/>
+          <Route path="/blog/create" element={<AddBlog />}/>
         </Routes>
       </main>
     </React.Fragment>
