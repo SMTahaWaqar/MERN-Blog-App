@@ -4,7 +4,7 @@ import Blog from './Blog'
 
 const UserBlogs = () => {
 
-  const [blogs, setBlogs] = useState()
+  const [user, setUser] = useState()
 
   const id = localStorage.getItem("userId")
 
@@ -16,13 +16,13 @@ const UserBlogs = () => {
   }
 
   useEffect(()=> {
-    sendRequest().then((data)=> setBlogs(data.blogs.blogs))
+    sendRequest().then((data)=> setUser(data.user))
   },[])
 
   return (
     <div>
-      {blogs && blogs.map((blog,index)=>(
-        <Blog title={blog.title} description={blog.description} imageUrl={blog.image} userName={blog.user.name} />
+      {user && user.blogs && user.blogs.map((blog,index)=>(
+        <Blog isUser={true} key={index} title={blog.title} description={blog.description} imageUrl={blog.image} userName={user.name} />
       ))}
     </div>
   )
